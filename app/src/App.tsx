@@ -10,6 +10,7 @@ import "./App.css";
 import { fdc3Ready } from "@finos/fdc3";
 import { AgentTests } from "./components/agentTests/AgentTests";
 import { FDC3Message } from "./components/FDC3Message";
+import { IntentTests } from "./components/intentTests/IntentTests";
 
 const mainTheme = createTheme({
 	palette: {
@@ -81,7 +82,7 @@ export const App = () => {
 	const [fdc3Available, setFdc3Available] = useState(false);
 	const [tabIndex, setTabIndex] = useState(0);
 
-	const handleTabChange = (event: React.ChangeEvent<{}>, newIndex: number) => {
+	const handleTabChange = (_event: React.ChangeEvent<{}>, newIndex: number) => {
 		setTabIndex(newIndex);
 	};
 
@@ -130,9 +131,13 @@ export const App = () => {
 								scrollButtons="auto"
 							>
 								<Tab label="Agent Compliance" />
+								<Tab label="Intent Compliance" />
 							</StyledTabs>
 							<TabPanel value={tabIndex} index={0}>
 								<AgentTests />
+							</TabPanel>
+							<TabPanel value={tabIndex} index={1}>
+								<IntentTests />
 							</TabPanel>
 						</Paper>
 					</Box>
