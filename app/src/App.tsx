@@ -8,7 +8,7 @@ import { TabPanel } from "./components/common/TabPanel";
 import { Header } from "./components/Header";
 import "./App.css";
 import { fdc3Ready } from "@finos/fdc3";
-import { AgentTests } from "./components/AgentTests";
+import { AgentTests } from "./components/agentTests/AgentTests";
 import { FDC3Message } from "./components/FDC3Message";
 
 const mainTheme = createTheme({

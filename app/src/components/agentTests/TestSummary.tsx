@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Stats } from "mocha";
-import { useTimer } from "../hooks/useTimer";
+import { useTimer } from "../../hooks/useTimer";
 import { TestsStatus } from "./TestRunner";
 import { AccessTimeRounded, CheckRounded, CloseRounded } from "@mui/icons-material";
 
