@@ -1,7 +1,12 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Box, Stack, Typography } from "@mui/material";
+import { IntentTestRunner } from "./IntentTestRunner";
 
-export const IntentTests = () => (
+interface IntentTestLayoutProps {
+	children: ReactNode
+}
+
+const IntentTestsLayout = ({ children }: IntentTestLayoutProps) => (
 	<Box
 		sx={{
 			flexGrow: 1,
@@ -9,10 +14,18 @@ export const IntentTests = () => (
 	>
 		<Stack gap={2}>
 			<Box>
-				<Typography variant="h5">FDC3 Agent Intent Test</Typography>
-				<Typography>Tests that intents are handled correctly by the App.</Typography>
+				{ children }
 			</Box>
 
 		</Stack>
 	</Box>
+)
+
+export const IntentTests = () => (
+	<IntentTestsLayout>
+		<Typography variant="h5">FDC3 Agent Intent Test</Typography>
+		<Typography>Tests that intents are handled correctly by the App.</Typography>
+
+		<IntentTestRunner />
+	</IntentTestsLayout>
 );
